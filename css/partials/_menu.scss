@@ -1,0 +1,90 @@
+header {
+  //Filho direto de body então ele irá ocupar 100% da largura
+  width: 100%;
+  padding-top: 16px;
+}
+.navbar {
+  max-width: 1440px;
+  // border: 1px solid blue;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+
+  li {
+    margin-left: 24px;
+  }
+}
+.logo {
+  max-width: 88px;
+}
+.nav-link {
+  display: inline-block;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 200;
+
+  color: $gray-3;
+
+  padding: 8px 16px;
+
+  position: relative;
+  transition: 0.4s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: -40px;
+    left: 50%;
+
+    border-radius: 1px;
+    width: 2px;
+    height: 0px;
+    background: linear-gradient(180deg, rgba(208, 18, 18, 0) 0%, #d01212 100%);
+    transition: 0.4s ease;
+  }
+
+  &:hover {
+    color: $white-light;
+
+    &::after {
+      height: 40px;
+    }
+  }
+}
+.nav-social {
+  display: flex;
+
+  svg {
+    cursor: pointer;
+
+    margin-left: 16px;
+    width: 24px;
+
+    path,
+    circle {
+      transition: 0.4s ease;
+    }
+    &:hover {
+      path,
+      circle {
+        fill: $red-light;
+        transform: translate3d(0, -3px, 0);
+      }
+    }
+  }
+}
