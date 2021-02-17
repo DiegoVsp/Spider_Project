@@ -6,10 +6,18 @@
 
   padding: 36px 16px;
 
-  overflow: hidden;
+  overflow: none;
+  height: 85vh;
+
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @include responsive() {
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+  }
 }
 .container-item-1 {
   max-width: 576px;
@@ -19,13 +27,24 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.container-item-2 {
-  // border: solid 1px green;
+.flex {
+  display: flex;
+}
+.w-auto {
+  // que estejam do tamanho automático do svg
+  width: auto;
+}
+.align-items-center {
+  align-items: center;
 }
 
 .spiderman {
-  width: 150%;
+  width: 102%;
   transform: translate3d(-170px, 0, 0);
+  @include responsive() {
+    width: 100%;
+    transform: translate3d(0px, 0, 0);
+  }
 }
 
 .btn {
@@ -122,7 +141,35 @@
   }
   &:hover {
     &::after {
-      width:101%;
+      width: 101%;
     }
+  }
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+
+    background: linear-gradient(100.79deg, #0a0c10 25.97%, rgba(10, 12, 16, 0.8) 50%, #0a0c10 76.1%);
   }
 }
