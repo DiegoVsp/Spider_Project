@@ -104,7 +104,55 @@ header {
     display: block;
     width: 48px;
     height: 48px;
-    background-color: $white;
+    // background-color: $white;
     border-radius: 8px;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 15%;
+
+      transition: 1s ease;
+
+      width: 70%;
+      height: 2px;
+      border-radius: 20px;
+
+      background-color: $white;
+    }
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 60%;
+      left: 45%;
+
+      transition: 1s ease;
+
+      width: 40%;
+      height: 2px;
+      border-radius: 20px;
+
+      background-color: $white;
+    }
   }
 }
+// ~ <- próximo elemento
+#bx:checked ~ label .bx::after {
+  transform: rotate(225deg);
+
+  top: 45%;
+  left: 15%;
+}
+#bx:checked ~ label .bx::before {
+  transform: rotate(-405deg);
+
+  width: 70%;
+
+  top: 45%;
+  left: 15%;
+}
+

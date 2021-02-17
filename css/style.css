@@ -692,9 +692,50 @@ header {
     display: block;
     width: 48px;
     height: 48px;
-    background-color: #EDF1F7;
     border-radius: 8px;
+    position: relative;
   }
+  .bx::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    width: 70%;
+    height: 2px;
+    border-radius: 20px;
+    background-color: #EDF1F7;
+  }
+  .bx::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    width: 40%;
+    height: 2px;
+    border-radius: 20px;
+    background-color: #EDF1F7;
+  }
+}
+
+#bx:checked ~ label .bx::after {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  top: 45%;
+  left: 15%;
+}
+
+#bx:checked ~ label .bx::before {
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+  width: 70%;
+  top: 45%;
+  left: 15%;
 }
 
 .logo-spiderman {
