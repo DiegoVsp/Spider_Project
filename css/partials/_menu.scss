@@ -28,7 +28,8 @@ header {
   }
 
   @include responsive() {
-    display: none;
+    visibility:hidden;
+    opacity: 0;
   }
 }
 .logo {
@@ -106,7 +107,12 @@ header {
     height: 48px;
     // background-color: $white;
     border-radius: 8px;
-    position: relative;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    
 
     &::after {
       content: "";
@@ -156,3 +162,7 @@ header {
   left: 15%;
 }
 
+#bx:checked ~ .nav-list {
+  visibility: visible;
+  opacity: 1;
+}

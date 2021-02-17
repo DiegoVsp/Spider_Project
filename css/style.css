@@ -608,7 +608,8 @@ header {
 
 @media screen and (max-width: 960px) {
   .nav-list {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
@@ -693,7 +694,11 @@ header {
     width: 48px;
     height: 48px;
     border-radius: 8px;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
   .bx::after {
     content: "";
@@ -736,6 +741,11 @@ header {
   width: 70%;
   top: 45%;
   left: 15%;
+}
+
+#bx:checked ~ .nav-list {
+  visibility: visible;
+  opacity: 1;
 }
 
 .logo-spiderman {
