@@ -2,9 +2,11 @@ header {
   //Filho direto de body então ele irá ocupar 100% da largura
   width: 100%;
   padding-top: 16px;
+  position: fixed;
+  z-index: 800;
 }
 .navbar {
-  max-width: 1440px;
+  max-width: 1024px;
   // border: 1px solid blue;
   margin: 0 auto;
 

@@ -1,31 +1,33 @@
-.container {
-  // border: 1px solid green;
-
-  max-width: 1440px;
+.container{
+  max-width: 1024px;
   margin: 0 auto;
-
   padding: 36px 16px;
 
-  overflow: none;
-  height: 85vh;
+  height: 100vh;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
 
-  @include responsive() {
+  overflow: hidden;
+
+  @include responsive(){
     flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 144px;
+
     height: auto;
-    overflow: hidden;
   }
 }
 .container-item-1 {
-  max-width: 576px;
+  max-width: 580px;
   // border: solid 1px yellow;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 }
 .flex {
   display: flex;
@@ -39,11 +41,13 @@
 }
 
 .spiderman {
-  width: 102%;
-  transform: translate3d(-170px, 0, 0);
+  width: 130%;
+  transition: .4s ease;
+  transform: translate3d(-150px, 0, 0);
+
   @include responsive() {
     width: 100%;
-    transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, -20px, 0);
   }
 }
 
@@ -172,4 +176,22 @@
 
     background: linear-gradient(100.79deg, #0a0c10 25.97%, rgba(10, 12, 16, 0.8) 50%, #0a0c10 76.1%);
   }
+}
+
+.bg-loader {
+  width: 100%;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(255deg, $red 0%, $red-dark 100%);
+  overflow: hidden;
 }
